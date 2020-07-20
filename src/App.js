@@ -1,6 +1,6 @@
   
 import React from 'react';
-import {BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'; 
+import {BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom'; 
 import './App.css';
 import Login from './pages/Login'; 
 // import Posts from './pages/Posts'; 
@@ -16,7 +16,7 @@ class App extends React.Component {
   constructor(){
     super();
     this.state = {
-
+      token: ""
     }  
   } 
 
@@ -27,7 +27,7 @@ class App extends React.Component {
         <Router>
           <Switch>
             <Route exact path="/login" component={Login}></Route>
-            <Route exact path="/home" component={Home}></Route>
+            <PrivateRoute exact path="/home" component={Home}></PrivateRoute>
             {/* <Route exact path="/posts"  component={Posts}></Route>
             <Route exact path="/photographers"  component={Photographers}></Route> */}
             {/* <Route exact path="/food"  component={Food}></Route> */}
@@ -35,7 +35,7 @@ class App extends React.Component {
             <Route exact path="/aerial"  component={Aerial}></Route>
             <Route exact path="/wedding"  component={Wedding}></Route> */}
             {/* <Route exact path="/posts/:id"  component={Posts}></Route> */}
-            <Route exact path="*"  component={Login}></Route>
+            <PrivateRoute exact path="*"  component={Login}></PrivateRoute>
           </Switch>
         </Router>
 
@@ -46,7 +46,18 @@ class App extends React.Component {
 
 
 
+function PrivateRoute(props){
 
+  const token = localStorage.getItem("token");
+
+  if (!token){
+    return <Redirect to="/login"></Redirect>
+  } 
+
+  return (<Route {...props} ></Route>);
+
+
+} 
  
 
 export default App;

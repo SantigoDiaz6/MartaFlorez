@@ -12,7 +12,7 @@ class Home extends React.Component {
 
     handlePhoto = (event) => {
 
-        this.props.history.push("/photographers");
+        this.props.history.push("/DarkCakes");
     }
 
     render() {

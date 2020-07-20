@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class Login extends React.Component{
     constructor(){
@@ -6,32 +7,32 @@ class Login extends React.Component{
         this.state = {
             email: "",
             password: "",
+            result: "",  //RESULT? Where'd we use it?
         } 
     } 
 
     handleSubmit = (event) => {
         event.preventDefault();
-
-        const email = this.state.email;
-        const password = this.state.password;
-        const fakeData = [{email:"yance.zapata@gmail.com", password:"12345"},
-                          {email:"santiago@test.com", password: "12345"},
-                          {email:"susi.diaz.1602@gmail.com", password:"12345"}];   
-
-        if (email.length > 0 && password.length > 0 ){
-            let dato = fakeData.filter(data => data.email===email)[0] ;
-            if ( dato && dato.password===password){
-                console.log("Access granted");
+        axios({
+            url: "http://127.0.0.1:8000/users/signin", //Organize Route
+            method: "POST",
+            data: {
+                email: this.state.email,
+                password: this.state.password
+            }
+            })
+            .then(response => {
+                localStorage.setItem("token",response.data);
                 this.props.history.push("/home");
-            } else{
-                this.setState({
+            })
+            .catch(error =>{
+                 this.setState({ error: error,
                     password: "",
-                }) 
-                console.log("Acceso denegado");
-            } 
-        }
-
-    } 
+                })
+             })
+            .finally(() => this.setState({ loading: false })); 
+    
+    }  
 
     handleInput = (event) => {
 
@@ -42,6 +43,7 @@ class Login extends React.Component{
     } 
 
     render(){
+        if (this.state.loading){return <h1>Loading...</h1>}
 
         return (
             <main>
