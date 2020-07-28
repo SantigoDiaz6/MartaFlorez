@@ -2,11 +2,11 @@ import React from 'react';
 import { CardDeck, Card, Button } from 'react-bootstrap';
 //import { Link } from 'react-router-dom';
 //import { postPhotoTypes } from '../components/fakeData';
-import classicdark from '../assets/images/classicdark.jpeg'
-import chocovolcano from '../assets/images/chocovolcano.jpg'
-import doublechoc from '../assets/images/doublechoc.png'
+import grapes from '../assets/images/grapes.jpg'
+import berries from '../assets/images/berries.jpg'
+import tropical from '../assets/images/tropical.jpg'
 
-class DarkCakes extends React.Component {
+class FruitCakes extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -14,25 +14,8 @@ class DarkCakes extends React.Component {
         }
     }
 
-    handlePurchaseClassic = () => {
-        const handler = window.ePayco.checkout.configure ({
-            key: process.env.REACT_APP_API_KEY_PAYMENT,
-            test: true,
-        });
-        handler.open ({
-            external: 'false',
-            amount: '15',
-            tax: '0',
-            tax_base: '0',
-            name: 'Classic Dark Cake',
-            description: 'Unit of a Classic Dark Cake MF',
-            currency: 'usd',
-            country: 'CO',
-            lang: 'en',
-            invoice: '12345',
-            //response: process.env.REACT_APP_RESPONSE_URL,
-            methodsDisable: ["DP", "CASH"],
-        })
+    handlePurchase = (event) => {
+
     }
 
 
@@ -41,36 +24,17 @@ class DarkCakes extends React.Component {
         return (
             <React.Fragment>
                 <div className="mainContainer">
-                    <h1>Dark Cakes</h1>
+                    <h1>Fruit Cakes</h1>
                 </div>
                 <CardDeck>
                     <Card style={{ width: 2 }}>
                         <Card.Header>
-                            Classic Dark
+                            Berry Nice
                         </Card.Header>
-                        <Card.Img variant="top" src={classicdark} />
+                        <Card.Img variant="top" src={berries} />
                         <Card.Body>
                             <Card.Text>
-                                Enjoy the best quality and the health
-                                benefits of a classic dark chocolate, summed up in the perfect comination,
-                                baked and ready to enjoy at your table or celebration.
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                            <small className="text-muted">Price: US$15</small>
-                            <Button variant="outline-dark" onClick={this.handlePurchaseClassic}> Buy it! </Button>
-                        </Card.Footer>
-                    </Card>
-                    <Card style={{ width: 2 }}>
-                        <Card.Header>
-                            Chocolate Volcano
-                        </Card.Header>
-                        <Card.Img variant="top" src={chocovolcano} />
-                        <Card.Body>
-                            <Card.Text>
-                                Hard on the outside, but creamy and juicy in the inside,
-                                the best Chocolate Volcano in town with the best recipes from
-                                Switzerland.
+                                Enjoy the touch of the berries, all mixed in this cake.
                             </Card.Text>
                         </Card.Body>
                         <Card.Footer>
@@ -79,14 +43,28 @@ class DarkCakes extends React.Component {
                     </Card>
                     <Card style={{ width: 2 }}>
                         <Card.Header>
-                            Double Chocolate
+                            Grapes Cake
                         </Card.Header>
-                        <Card.Img variant="top" src={doublechoc} />
+                        <Card.Img variant="top" src={grapes} />
                         <Card.Body>
                             <Card.Text>
-                                Not enough with being a fan of chocolate? Try this
-                                reinforced double chocolate cake, with 2 different kind
-                                of chocolate.
+                                Want to have a nice mixer for the wine? What would be better than
+                                a grapes-made cake, try this out!
+                            </Card.Text>
+                        </Card.Body>
+                        <Card.Footer>
+                            <Button variant="outline-dark" onClick={this.handlePurchase}> Buy it! </Button>
+                        </Card.Footer>
+                    </Card>
+                    <Card style={{ width: 2 }}>
+                        <Card.Header>
+                            Tropical
+                        </Card.Header>
+                        <Card.Img variant="top" src={tropical} />
+                        <Card.Body>
+                            <Card.Text>
+                                Feel all the caribean breeze with a bite of the tropical
+                                cake, fresh and refreshing.
                             </Card.Text>
                         </Card.Body>
                         <Card.Footer>
@@ -131,4 +109,4 @@ class DarkCakes extends React.Component {
 }
 
 
-export default DarkCakes;
+export default FruitCakes;

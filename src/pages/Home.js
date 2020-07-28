@@ -1,6 +1,10 @@
 import React from 'react';
 import '../assets/styles/Home.css'
-//import photography from './Photography'
+import { Container, Row, Col, Image } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import darkcake from '../assets/images/darkcake.jpg'
+import whitecake from '../assets/images/whitecake.jpg'
+import fruitcake from '../assets/images/fruitcake.jpg'
 
 class Home extends React.Component {
     constructor() {
@@ -19,20 +23,38 @@ class Home extends React.Component {
         return (
 
             <React.Fragment>
-                <div class="mainContainer">
+                <div className="mainContainer">
                     <h1>Which Kind of cake are you looking for?</h1>
 
-                    <div class="services">
-                        <div  onClick={ this.handlePhoto } class="service1">
+                    {/* <div className="services">
+                        <div onClick={this.handlePhoto} className="service1">
                             <h3>Dark Cakes</h3>
                         </div>
-                        <div class="service2">
+                        <div className="service2">
                             <h3>White Cakes</h3>
                         </div>
-                        <div class="service3">
+                        <div className="service3">
                             <h3>Fruit Cakes</h3>
-                        </div>
-                    </div>
+                        </div> 
+
+                    </div> */}
+
+
+                    <Row>
+                            <Col xs={1} md={2}>
+                                <Image onClick={this.handlePhoto} src={darkcake} roundedCircle />
+                                <h3>Dark Cakes</h3>
+                            </Col>
+                            <Col xs={1} md={2}>
+                                <Image src={whitecake} roundedCircle />
+                                <h3>White Cakes</h3>
+                            </Col>
+                            <Col xs={1} md={2}>
+                                <Image src={fruitcake} roundedCircle />
+                                <h3><Link to="/WhiteCakes"  className="text-link"> Fruit Cakes </Link></h3>
+                            </Col>
+                        </Row>
+
                 </div>
             </React.Fragment>
         )

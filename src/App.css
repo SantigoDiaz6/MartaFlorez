@@ -4,7 +4,7 @@
 }
 
 body {
-  background-image: url("./assets/images/mumbaking.jpg");
+  background-image: url("./assets/images/background.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -65,7 +65,7 @@ header nav ul li a {
 .box {
   background-color: #E8E8E8;
   width: 400px;
-  height: 250px;
+  height: 320px;
   margin: auto;
   background: rgba(0, 0, 0, 0.4);
   padding: 10px;
@@ -96,7 +96,7 @@ header nav ul li a {
   color: #FFF;
   cursor: pointer;
   transition: 0.2s;
-  font-size: 20px;
+  font-size: 10px;
 }
 
 .photographer-img {
