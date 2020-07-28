@@ -25,7 +25,49 @@ class DarkCakes extends React.Component {
             tax: '0',
             tax_base: '0',
             name: 'Classic Dark Cake',
-            description: 'Unit of a Classic Dark Cake MF',
+            description: 'Classic Dark Cake MF',
+            currency: 'usd',
+            country: 'CO',
+            lang: 'en',
+            invoice: '12345',
+            //response: process.env.REACT_APP_RESPONSE_URL,
+            methodsDisable: ["DP", "CASH"],
+        })
+    }
+
+    handlePurchaseVolcano = () => {
+        const handler = window.ePayco.checkout.configure ({
+            key: process.env.REACT_APP_API_KEY_PAYMENT,
+            test: true,
+        });
+        handler.open ({
+            external: 'false',
+            amount: '20',
+            tax: '0',
+            tax_base: '0',
+            name: 'Chocolate Volcano',
+            description: 'Chocolate Volcano MF',
+            currency: 'usd',
+            country: 'CO',
+            lang: 'en',
+            invoice: '12345',
+            //response: process.env.REACT_APP_RESPONSE_URL,
+            methodsDisable: ["DP", "CASH"],
+        })
+    }
+
+    handlePurchaseVolcano = () => {
+        const handler = window.ePayco.checkout.configure ({
+            key: process.env.REACT_APP_API_KEY_PAYMENT,
+            test: true,
+        });
+        handler.open ({
+            external: 'false',
+            amount: '20',
+            tax: '0',
+            tax_base: '0',
+            name: 'Double Chocolate',
+            description: 'Double Chocolate MF',
             currency: 'usd',
             country: 'CO',
             lang: 'en',
@@ -55,10 +97,12 @@ class DarkCakes extends React.Component {
                                 benefits of a classic dark chocolate, summed up in the perfect comination,
                                 baked and ready to enjoy at your table or celebration.
                             </Card.Text>
+                                <small className="text-muted">Price: US$15</small>
                         </Card.Body>
                         <Card.Footer>
-                            <small className="text-muted">Price: US$15</small>
-                            <Button variant="outline-dark" onClick={this.handlePurchaseClassic}> Buy it! </Button>
+                            <div className="text-center">
+                                <Button variant="outline-dark" onClick={this.handlePurchaseClassic}> Buy it! </Button>
+                            </div>
                         </Card.Footer>
                     </Card>
                     <Card style={{ width: 2 }}>
@@ -72,9 +116,12 @@ class DarkCakes extends React.Component {
                                 the best Chocolate Volcano in town with the best recipes from
                                 Switzerland.
                             </Card.Text>
+                            <small className="text-muted">Price: US$20</small>
                         </Card.Body>
                         <Card.Footer>
-                            <Button variant="outline-dark" onClick={this.handlePurchase}> Buy it! </Button>
+                            <div className="text-center">
+                                <Button className="ml-2" variant="outline-dark" onClick={this.handlePurchaseVolcano}> Buy it! </Button>
+                            </div>
                         </Card.Footer>
                     </Card>
                     <Card style={{ width: 2 }}>
@@ -88,9 +135,12 @@ class DarkCakes extends React.Component {
                                 reinforced double chocolate cake, with 2 different kind
                                 of chocolate.
                             </Card.Text>
+                            <small className="text-muted">Price: US$20</small>
                         </Card.Body>
                         <Card.Footer>
-                            <Button variant="outline-dark" onClick={this.handlePurchase}> Buy it! </Button>
+                            <div className="text-center">
+                                <Button variant="outline-dark" className="ml-2" onClick={this.handlePurchaseVolcano}> Buy it! </Button>
+                            </div>
                         </Card.Footer>
                     </Card>
                 </CardDeck>

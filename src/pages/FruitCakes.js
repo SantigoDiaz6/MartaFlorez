@@ -38,7 +38,9 @@ class FruitCakes extends React.Component {
                             </Card.Text>
                         </Card.Body>
                         <Card.Footer>
-                            <Button variant="outline-dark" onClick={this.handlePurchase}> Buy it! </Button>
+                            <div className="text-center">
+                                <Button variant="outline-dark" onClick={this.handlePurchase}> Buy it! </Button>
+                            </div>
                         </Card.Footer>
                     </Card>
                     <Card style={{ width: 2 }}>
@@ -53,7 +55,9 @@ class FruitCakes extends React.Component {
                             </Card.Text>
                         </Card.Body>
                         <Card.Footer>
-                            <Button variant="outline-dark" onClick={this.handlePurchase}> Buy it! </Button>
+                            <div className="text-center">
+                                <Button variant="outline-dark" onClick={this.handlePurchase}> Buy it! </Button>
+                            </div>
                         </Card.Footer>
                     </Card>
                     <Card style={{ width: 2 }}>
@@ -68,7 +72,9 @@ class FruitCakes extends React.Component {
                             </Card.Text>
                         </Card.Body>
                         <Card.Footer>
-                            <Button variant="outline-dark" onClick={this.handlePurchase}> Buy it! </Button>
+                            <div className="text-center">
+                                <Button variant="outline-dark" onClick={this.handlePurchase}> Buy it! </Button>
+                            </div>
                         </Card.Footer>
                     </Card>
                 </CardDeck>

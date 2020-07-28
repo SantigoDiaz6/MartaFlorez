@@ -29,7 +29,7 @@ class WhiteCakes extends React.Component {
                 <CardDeck>
                     <Card style={{ width: 2 }}>
                         <Card.Header>
-                            Light Vanilla 
+                            Light Vanilla
                         </Card.Header>
                         <Card.Img variant="top" src={roses} />
                         <Card.Body>
@@ -40,7 +40,9 @@ class WhiteCakes extends React.Component {
                             </Card.Text>
                         </Card.Body>
                         <Card.Footer>
-                            <Button variant="outline-dark" onClick={this.handlePurchase}> Buy it! </Button>
+                            <div className="text-center">
+                                <Button variant="outline-dark" onClick={this.handlePurchase}> Buy it! </Button>
+                            </div>
                         </Card.Footer>
                     </Card>
                     <Card style={{ width: 2 }}>
@@ -50,13 +52,15 @@ class WhiteCakes extends React.Component {
                         <Card.Img variant="top" src={vanilla} />
                         <Card.Body>
                             <Card.Text>
-                                For the lovers of the classic, enjoy a classic vanilla 
+                                For the lovers of the classic, enjoy a classic vanilla
                                 cake, made in the most traditional way for those who want to remember
                                 those afternoons with the family enjoying a piece of cake.
                             </Card.Text>
                         </Card.Body>
                         <Card.Footer>
-                            <Button variant="outline-dark" onClick={this.handlePurchase}> Buy it! </Button>
+                            <div className="text-center">
+                                <Button variant="outline-dark" onClick={this.handlePurchase}> Buy it! </Button>
+                            </div>
                         </Card.Footer>
                     </Card>
                     <Card style={{ width: 2 }}>
@@ -73,7 +77,9 @@ class WhiteCakes extends React.Component {
                             </Card.Text>
                         </Card.Body>
                         <Card.Footer>
-                            <Button variant="outline-dark" onClick={this.handlePurchase}> Buy it! </Button>
+                            <div className="text-center">
+                                <Button variant="outline-dark" onClick={this.handlePurchase}> Buy it! </Button>
+                            </div>
                         </Card.Footer>
                     </Card>
                 </CardDeck>

@@ -41,19 +41,25 @@ class Home extends React.Component {
 
 
                     <Row>
-                            <Col xs={1} md={2}>
-                                <Image onClick={this.handlePhoto} src={darkcake} roundedCircle />
+                        <Col xs={1} md={{ span: 3, offset: 1 }}>
+                            <Image onClick={this.handlePhoto} width="100%" height="50%" src={darkcake} roundedCircle />
+                            <div className="text-center">
                                 <h3>Dark Cakes</h3>
-                            </Col>
-                            <Col xs={1} md={2}>
-                                <Image src={whitecake} roundedCircle />
+                            </div>
+                        </Col>
+                        <Col xs={1} md={{ span: 3, offset: 1 }}>
+                            <Image src={whitecake} width="100%" height="50%" roundedCircle />
+                            <div className="text-center">
                                 <h3>White Cakes</h3>
-                            </Col>
-                            <Col xs={1} md={2}>
-                                <Image src={fruitcake} roundedCircle />
-                                <h3><Link to="/WhiteCakes"  className="text-link"> Fruit Cakes </Link></h3>
-                            </Col>
-                        </Row>
+                            </div>
+                        </Col>
+                        <Col xs={1} md={{ span: 2, offset: 1 }}>
+                            <Image src={fruitcake} width="130%"  roundedCircle />
+                            <div className="text-center">
+                                <h3><Link to="/WhiteCakes" className="text-link"> Fruit Cakes </Link></h3>
+                            </div>
+                        </Col>
+                    </Row>
 
                 </div>
             </React.Fragment>
